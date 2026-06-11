@@ -1,0 +1,21 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # クリックジャッキング攻撃を防ぐ
+    X-Frame-Options = "DENY"
+
+    # MIMEタイプのスニッフィングを防ぐ
+    X-Content-Type-Options = "nosniff"
+
+    # リファラー情報の制御
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # HTTPSを強制（HSTS）
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+    # ブラウザの機能アクセスを制限
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+    # コンテンツセキュリティポリシー（CSP）
+    # 自サイトのリソースのみ許可、インラインスタイルは許可（既存CSSのため）
+    Content-Security-Policy = "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; media-src 'self'; font-src 'self'; frame-ancestors 'none';"
