@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <!-- =====================================================
+         基本設定 / SEO / OGP
+         サイトのタイトル，検索エンジン向け情報，SNS共有情報を定義する
+         ===================================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CatMonster | AI画像ギャラリー</title>
+
+    <!-- 説明 -->
+    <meta name="description" content="CatMonsterはAIが生成した異形の猫たちを展示するデジタルギャラリーサイト．多様なCatMonsterの世界を体験．">
+    <!-- 作成者 -->
+    <meta name="author" content="SOSO">
+    
+    <meta name="robots" content="index, follow">
+
+    <!-- OGP -->
+    <meta property="og:site_name" content="CatMonster">
+    <meta property="og:title" content="CatMonster - AI画像ギャラリー">
+    <meta property="og:description" content="AIが描く異形の猫たち。デジタルアートの新しい世界。">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:url" content="https://catmonster.netlify.app/">
+    <meta property="og:image" content="./img/cat28.webp">
+
+    <!-- X  -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CatMonster - AI画像ギャラリー">
+    <meta name="twitter:description" content="AIが描く異形の猫たちのギャラリーサイト">
+    <meta name="twitter:image" content="./img/cat28.webp">
+
+    <!-- canonical -->
+    <link rel="canonical" href="https://catmonster.netlify.app/">
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "CatMonster",
+      "url": "https://catmonster.netlify.app/"
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&display=swap"></noscript>
+
+    <link rel="stylesheet" href="./css/sanitize.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <!-- =====================================================
+         ローディング画面
+         ===================================================== -->
+    <div class="loading-container" aria-hidden="true">
+        <div class="loader"></div>
+        <p class="loading-text">Loading...</p>
+    </div>
+
+    
+    <!-- ランダムで表示される演出用メッセージ -->
+    <div id="warning-signal" aria-hidden="true">UNKNOWN SIGNAL DETECTED</div>
+
+    
+    <!-- =====================================================
+         メインコンテンツ
+         ===================================================== -->
+    <main class="content">
+
+        <!-- =====================================================
+             TOP: ファーストビュー
+             ===================================================== -->
+        <section id="top" class="hero">
+            <video id="video" autoplay loop muted playsinline>
+                <source src="./img/space.mp4" type="video/mp4">
+            </video>
+
+            <div class="hero-content">
+                                <!-- サイト共通ヘッダー -->
+                <header>
+                    <span class="site-logo">CatMonster</span>
+                    <nav aria-label="メインナビゲーション">
+                        <a href="#top">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#gallery">Gallery</a>
+                        <a href="https://www.instagram.com/0304_sooora/" target="_blank" rel="noopener">Contact</a>
+                    </nav>
+                </header>
+
+                
+                <!-- ヒーローのタイトルエリア -->
+                <div class="hero-title-area">
+                    <p class="hero-kicker">UNKNOWN CREATURE ARCHIVE</p>
+                    <h1 class="hero-title">CatMonster</h1>
+                    <p class="hero-subtitle">
+                        あなたの近くにも?! 猫の姿をした恐怖の異形!<br>
+                        AIが描く，デジタルな猫の世界
+                    </p>
+                    <div class="hero-cta">
+                        <a class="hero-btn primary" href="#gallery">ギャラリーを見る</a>
+                        <a class="hero-btn" href="about.html">このサイトについて</a>
+                    </div>
+                </div>
+
+                
+                <!-- 装飾用の流れる画像トラック。aria-hidden なので読み上げ対象外 -->
+                <div class="slide-track" aria-hidden="true">
+                    <div class="slide-inner">
+                        <img src="./img/cat100.webp" alt="">
+                        <img src="./img/cat101.webp" alt="">
+                        <img src="./img/cat102.webp" alt="">
+                        <img src="./img/cat25.webp" alt="">
+                        <img src="./img/cat56.webp" alt="">
+                        <img src="./img/cat48.webp" alt="">
+                        <img src="./img/catc.webp" alt="">
+                        <img src="./img/catb.webp" alt="">
+                        <img src="./img/cat100.webp" alt="">
+                        <img src="./img/cat101.webp" alt="">
+                        <img src="./img/cat102.webp" alt="">
+                        <img src="./img/cat25.webp" alt="">
+                        <img src="./img/cat56.webp" alt="">
+                        <img src="./img/cat48.webp" alt="">
+                        <img src="./img/catc.webp" alt="">
+                        <img src="./img/catb.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             About: サイト概要 
+             ===================================================== -->
+        <section id="about" class="about">
+            <h2 class="section-title">About</h2>
+            <p class="about-text">
+                CatMonstersは，AIによって生み出された猫の姿をした異形の生き物たち．<br>
+                その生態は未だ解明されていません．<br>
+            </p>
+
+                        <!--
+                 ルーレット機能
+                 script.js が .img-wrap の data-* 属性から画像情報を集めて表示を切り替え
+                 -->
+            <div class="about-roulette">
+                <p class="about-roulette-kicker">Even Around You</p>
+                <h3 class="about-roulette-title">あなたの近くにもCatMonster</h3>
+                <p class="about-roulette-text">
+                    ボタンを押してもう一度押すと，近くに潜むCatMonsterが現れます．<br>
+                    Press again to reveal a CatMonster lurking nearby.
+                </p>
+
+                <div class="about-roulette-viewer">
+                    <img
+                        id="about-roulette-image"
+                        src="./img/cat100.webp"
+                        alt="ランダム表示されるCatMonster"
+                    >
+
+                    <div class="about-roulette-meta">
+                        <p class="about-roulette-label">IDENTIFICATION RESULT</p>
+                        <h4 id="about-roulette-name">SHD-100</h4>
+                        <p id="about-roulette-type">分類: 悪霊結合種</p>
+                        <p id="about-roulette-danger">危険度: A+</p>
+                    </div>
+                </div>
+
+                <button
+                    type="button"
+                    id="about-roulette-toggle"
+                    class="about-roulette-btn"
+                    aria-pressed="false"
+                >
+                    START
+                </button>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             Gallery: 作品一覧
+             ===================================================== -->
+        <section id="gallery" class="gallery">
+            <h2 class="section-title">Gallery</h2>
+
+                        <!-- カテゴリへスクロールする切り替えボタン群 -->
+            <div class="gallery-switcher" aria-label="ギャラリー切り替え">
+                <button type="button" data-target=".cat-space" class="is-active">VOID</button>
+                <button type="button" data-target=".cat-shadow">SHADE</button>
+                <button type="button" data-target=".cat-ghost">WISP</button>
+                <button type="button" id="random-cat">RANDOM</button>
+            </div>
+
+                        <!-- カテゴリ1: -->
+            <div class="gallery-category cat-space">
+                <div class="category-header">
+                    <div class="category-header-left">
+                        <p class="category-number">No.01</p>
+                        <p class="category-label">Interstellar Species<br>星間生息種</p>
+                    </div>
+                    <div class="category-center">
+                        <h3 class="category-title">VOID</h3>
+                        <div class="category-divider"></div>
+                    </div>
+                    <div class="category-header-right">
+                        <p class="category-desc">彼らは銀河に生息する猫型生命体で，高い知能を持ちます．極めて高速に移動し，宇宙環境の影響を受けません．</p>
+                    </div>
+                </div>
+                                <!--
+                     画像カード一覧
+                     data-src    : モーダル拡大画像やダウンロードに使用
+                     data-name   : 個体名
+                     data-type   : 分類
+                     data-danger : 危険度
+                     -->
+                <div class="img-grid">
+                    <div class="img-wrap" data-src="./img/cat28.webp" data-name="VX-VOID" data-type="分類: 星間生息種" data-danger="危険度: C">
+                        <img class="gallery-img" src="./img/cat28.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat41.webp" data-name="NEBULA-41" data-type="分類: 星間生息種" data-danger="危険度: B+">
+                        <img class="gallery-img" src="./img/cat41.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat27.webp" data-name="SINGULAR-27" data-type="分類: 星間生息種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat27.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat38.webp" data-name="ORBIT-38" data-type="分類: 星間生息種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat38.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat43.webp" data-name="COSMO-43" data-type="分類: 星間生息種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat43.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat1a.webp" data-name="ARC-01A" data-type="分類: 星間生息種" data-danger="危険度: B">
+                        <img class="gallery-img" src="./img/cat1a.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat31.webp" data-name="VOID-31" data-type="分類: 星間生息種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat31.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat10.webp" data-name="STAR-10" data-type="分類: 星間生息種" data-danger="危険度: C">
+                        <img class="gallery-img" src="./img/cat10.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat45.webp" data-name="COSMIC-45" data-type="分類: 星間生息種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat45.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat49.webp" data-name="SOL-49" data-type="分類: 星間生息種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat49.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat11.webp" data-name="NOVA-11" data-type="分類: 星間生息種" data-danger="危険度: D">
+                        <img class="gallery-img" src="./img/cat11.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat22.webp" data-name="LIGHTLESS-22" data-type="分類: 星間生息種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat22.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat33.webp" data-name="DEEP-33" data-type="分類: 星間生息種" data-danger="危険度: B+">
+                        <img class="gallery-img" src="./img/cat33.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat39.webp" data-name="ASTRA-39" data-type="分類: 星間生息種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat39.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat46.webp" data-name="GATE-46" data-type="分類: 星間生息種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat46.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat66.webp" data-name="DRIFT-66" data-type="分類: 星間生息種" data-danger="危険度: B+">
+                        <img class="gallery-img" src="./img/cat66.webp" alt="Space Cat" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+                        <!-- カテゴリ2: 闇 / 悪霊系 -->
+            <div class="gallery-category cat-shadow">
+                <div class="category-header">
+                    <div class="category-header-left">
+                        <p class="category-number">No.02</p>
+                        <p class="category-label">Spirit-Bound Species<br>悪霊結合種</p>
+                    </div>
+                    <div class="category-center">
+                        <h3 class="category-title">SHADE</h3>
+                        <div class="category-divider"></div>
+                    </div>
+                    <div class="category-header-right">
+                        <p class="category-desc">非常に邪悪な存在で、悪霊と結びついた特徴を持つ種．人間に対しても攻撃的で、極めて危険とされています．目が合った瞬間に襲いかかることが確認されています．</p>
+                    </div>
+                </div>
+                <div class="img-grid">
+                    <div class="img-wrap" data-src="./img/cat100.webp" data-name="SHD-100" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat100.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat86.webp" data-name="SHD-86" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat86.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat48.webp" data-name="NOIR-48" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat48.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat51.webp" data-name="UMBRA-51" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat51.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat52.webp" data-name="ABYSS-52" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat52.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat80.webp" data-name="HEX-80" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat80.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat88.webp" data-name="BLIGHT-88" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat88.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat53.webp" data-name="CURSE-53" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat53.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat57.webp" data-name="DREAD-57" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat57.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat56.webp" data-name="ECLIPSE-56" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat56.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat58.webp" data-name="HOLLOW-58" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat58.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat59.webp" data-name="BANE-59" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat59.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat60.webp" data-name="NIGHTMARE-60" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat60.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/catb.webp" data-name="SHADE-B" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/catb.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat25.webp" data-name="DUSK-25" data-type="分類: 悪霊結合種" data-danger="危険度: B+">
+                        <img class="gallery-img" src="./img/cat25.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat63.webp" data-name="PHANTOM-63" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat63.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat47.webp" data-name="VOIDSHADE-47" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat47.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat62.webp" data-name="SHRINE-62" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat62.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat69.webp" data-name="SEAL-69" data-type="分類: 悪霊結合種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat69.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat34.webp" data-name="HAUNT-34" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat34.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat61.webp" data-name="NIGHT-61" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat61.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat101.webp" data-name="SHD-101" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat101.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat102.webp" data-name="SHD-102" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat102.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/catc.webp" data-name="CURSE-C" data-type="分類: 悪霊結合種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/catc.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat70.webp" data-name="RIFT-70" data-type="分類: 悪霊結合種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat70.webp" alt="Shadow Cat" loading="lazy">
+                    </div>
+                </div>
+            </div>
+
+                        <!-- カテゴリ3: 霊体 / ゴースト系 -->
+            <div class="gallery-category cat-ghost">
+                <div class="category-header">
+                    <div class="category-header-left">
+                        <p class="category-number">No.03</p>
+                        <p class="category-label">Ethereal Predator Species<br>霊体捕食種</p>
+                    </div>
+                    <div class="category-center">
+                        <h3 class="category-title">WISP</h3>
+                        <div class="category-divider"></div>
+                    </div>
+                    <div class="category-header-right">
+                        <p class="category-desc">外見は透明で，普通の猫と同じくらいの大きさをしています。夜になると現れ，人間を驚かせたり，いたずらをすることがあります．近くにいるだけで魂を吸い取ってしまうこともある危険な種類です．</p>
+                    </div>
+                </div>
+                <div class="img-grid">
+                    <div class="img-wrap" data-src="./img/cat71.webp" data-name="WSP-71" data-type="分類: 霊体捕食種" data-danger="危険度: EX">
+                        <img class="gallery-img" src="./img/cat71.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat72.webp" data-name="MIST-72" data-type="分類: 霊体捕食種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat72.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat73.webp" data-name="ECHO-73" data-type="分類: 霊体捕食種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat73.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat116.webp" data-name="SILENT-116" data-type="分類: 霊体捕食種" data-danger="危険度: EX">
+                        <img class="gallery-img" src="./img/cat116.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat74.webp" data-name="VEIL-74" data-type="分類: 霊体捕食種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat74.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat75.webp" data-name="FOG-75" data-type="分類: 霊体捕食種" data-danger="危険度: A">
+                        <img class="gallery-img" src="./img/cat75.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat91.webp" data-name="WRAITH-91" data-type="分類: 霊体捕食種" data-danger="危険度: EX">
+                        <img class="gallery-img" src="./img/cat91.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat77.webp" data-name="SPECTER-77" data-type="分類: 霊体捕食種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat77.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat76.webp" data-name="WISP-76" data-type="分類: 霊体捕食種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat76.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat79.webp" data-name="LINGER-79" data-type="分類: 霊体捕食種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat79.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat112.webp" data-name="PALE-112" data-type="分類: 霊体捕食種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat112.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat113.webp" data-name="TRACE-113" data-type="分類: 霊体捕食種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat113.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat90.webp" data-name="FADE-90" data-type="分類: 霊体捕食種" data-danger="危険度: A+">
+                        <img class="gallery-img" src="./img/cat90.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat92.webp" data-name="HAZE-92" data-type="分類: 霊体捕食種" data-danger="危険度: S">
+                        <img class="gallery-img" src="./img/cat92.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                    <div class="img-wrap" data-src="./img/cat87.webp" data-name="REMNANT-87" data-type="分類: 霊体捕食種" data-danger="危険度: EX">
+                        <img class="gallery-img" src="./img/cat87.webp" alt="Ghost Cat" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; CatMonsters. All rights reserved.</p>
+            <p>
+                <a href="index.html">Home</a> |
+                <a href="about.html">このサイトについて</a> |
+                <a href="terms.html">利用規約</a>
+            </p>
+        </footer>
+    </main>
+
+    <!-- モーダル -->
+    
+    <!-- =====================================================
+         モーダル
+         ===================================================== -->
+    <div id="modal" role="dialog" aria-modal="true" aria-label="画像拡大表示">
+        <button id="modal-close" aria-label="閉じる">&times;</button>
+
+        <div class="modal-panel">
+            <img id="modal-img" src="" alt="CatMonster 拡大画像">
+
+            <div class="modal-meta">
+                <p class="modal-label">ARCHIVE DATA</p>
+                <h3 id="modal-name">UNKNOWN</h3>
+                <p id="modal-type">分類: 未確認異形種</p>
+                <p id="modal-danger">危険度: S</p>
+
+                <a id="modal-download" class="modal-download-btn" href="#" download>
+                    Download 
+                </a>
+
+                <p class="modal-save-note">
+                    スマホでは画像を開いたあと，長押しで保存できる場合があります。
+                </p>
+            </div>
+        </div>
+    </div>
+
+        <!-- ページ演出・モーダル・ルーレットなどを制御するJS -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
